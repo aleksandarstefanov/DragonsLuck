@@ -1,0 +1,27 @@
+class_name: ApiTester
+paths:
+    log: _log
+    data: _data
+    helpers: _helpers
+settings:
+    log: true
+modules:
+    enabled:
+        - WebDriver
+        - Asserts
+        - REST
+    config:
+        WebDriver:
+            browser: 'chrome'
+            url: 'https://games.betfairarcade.com'
+            port: 4445
+            unexpectedAlertBehaviour: 'accept'
+        REST:
+            depends: PhpBrowser
+            url: 'https://games.betfairarcade.com'
+env:
+    chrome:
+        config:
+            WebDriver:
+                browser: 'chrome'
+                url: 'http://google.com'
